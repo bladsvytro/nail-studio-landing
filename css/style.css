@@ -148,3 +148,10 @@ h1, h2, h3 { font-family: var(--font-display); line-height: var(--lh-snug); }
   .nav__menu.is-open { display: flex; } .nav__menu li { padding-block: var(--sp-2); border-bottom: 1px solid var(--bg-muted); }
 }
 @media (max-width: 520px) { .site-header__cta { display: none; } }
+
+/* ---- Mobile hardening ---- */
+html { scroll-padding-top: 76px; }
+@media (max-width: 640px) {
+  /* iOS не зумит страницу при фокусе, если шрифт поля >= 16px */
+  .field input, .field select, .field textarea { font-size: 16px; }
+}
